@@ -15,7 +15,8 @@ const schema = {
     id: {
       type: 'Number',
       required: true,
-      id: 1,
+      id: true,
+      generated: true,
     },
     customerName: {
       type: 'String',
