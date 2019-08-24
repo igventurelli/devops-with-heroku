@@ -11,7 +11,7 @@ services:
     volumes:
        - ~/storage/gypz/postgres:/data/postgres
     ports:
-      - "5432:5432"
+      - "5555:5432"
     networks: 
       - gypz-network
 
