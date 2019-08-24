@@ -36,10 +36,10 @@
 					"raw": "[\n    {\n        \"customerName\": \"Cliente 1\"\n    },\n    {\n        \"customerName\": \"Cliente 2\"\n    }\n]"
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/requests",
+					"raw": "http://app:3000/api/requests",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"app"
 					],
 					"port": "3000",
 					"path": [
@@ -74,10 +74,10 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/requests",
+					"raw": "http://app:3000/api/requests",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"app"
 					],
 					"port": "3000",
 					"path": [
@@ -112,16 +112,16 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/requests/3",
+					"raw": "http://app:3000/api/requests/1",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"app"
 					],
 					"port": "3000",
 					"path": [
 						"api",
 						"requests",
-						"3"
+						"1"
 					]
 				}
 			},
