@@ -3,13 +3,14 @@
   "plural": "requests",
   "base": "PersistedModel",
   "idInjection": true,
-  "options": {
+  "forceId": true
+,  "options": {
     "validateUpsert": true
   },
   "properties": {
     "id": {
       "type": "number",
-      "required": true,
+      "generated": true,
       "id": true
     },
     "customerName": {
