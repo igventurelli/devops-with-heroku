@@ -8,8 +8,8 @@ services:
 jobs:
   include:
     - stage: test
-    # dockerfile
-      script: docker pull postman/newman
+      script: docker build -t gypz/app .
+      script: docker run -p 3000:3000 -d gypz/app
       script: docker run -v ~/tests:/etc/newman -t postman/newman:alpine postman-collection.json
     - stage: deploy
-      script: ./deploy
+      script: echo Deploy phase managed by Heroku
