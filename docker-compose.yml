@@ -11,7 +11,7 @@ services:
     volumes:
        - ~/storage/gypz/postgres:/data/postgres
     ports:
-      - "5432:5432"
+      - "5433:5432"
     networks: 
       - gypz-network
 
@@ -19,7 +19,7 @@ services:
     container_name: app
     build: .
     environment:
-      DATABASE_URL: postgres://gypz:gypz@gypz-db:5432/gypz
+      DATABASE_URL: postgres://gypz:gypz@gypz-db:5433/gypz
     ports:
       - "3000:3000"
     networks: 
