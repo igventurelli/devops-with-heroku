@@ -11,4 +11,33 @@ services:
     volumes:
        - ~/storage/gypz/postgres:/data/postgres
     ports:
-      - "5432:5432"
+      - "5555:5432"
+    networks: 
+      - gypz-network
+
+  app:
+    container_name: app
+    build: .
+    environment:
+      DATABASE_URL: postgres://gypz:gypz@gypz-db:5432/gypz
+    ports:
+      - "3000:3000"
+    networks: 
+      - gypz-network
+    depends_on:
+      - postgres
+    
+  newman:
+    container_name: newman
+    image: postman/newman:alpine
+    command: run tests/postman-collection.json
+    volumes:
+       - ${PWD}:/etc/newman
+    networks: 
+      - gypz-network
+    depends_on:
+      - app
+
+networks:
+  gypz-network:
+    driver: bridge

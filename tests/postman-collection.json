@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "2419d11f-7222-48d9-abe8-fb3860b509fb",
+		"name": "GYPZ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "975753f3-f902-466c-85c0-b1cf1767c0fc",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"customerName\": \"Cliente 1\"\n    },\n    {\n        \"customerName\": \"Cliente 2\"\n    }\n]"
+				},
+				"url": {
+					"raw": "http://app:3000/api/requests",
+					"protocol": "http",
+					"host": [
+						"app"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Requests",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a2e8a648-a711-415f-b89b-88daf1242d53",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://app:3000/api/requests",
+					"protocol": "http",
+					"host": [
+						"app"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0af88308-7929-4079-9a5d-f7190d1ce749",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://app:3000/api/requests/1",
+					"protocol": "http",
+					"host": [
+						"app"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"requests",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

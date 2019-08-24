@@ -1,3 +1,14 @@
 language: node_js
 node_js:
   - 8
+
+services:
+  - docker
+
+jobs:
+  include:
+    - stage: test
+      script: docker-compose build
+      script: docker-compose up --exit-code-from newman
+    - stage: deploy
+      script: echo Deploy phase managed by Heroku
