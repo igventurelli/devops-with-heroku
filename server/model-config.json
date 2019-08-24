@@ -15,6 +15,16 @@
   },
   "request": {
     "dataSource": "pg",
-    "public": true
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "find": true,
+          "create": true,
+          "deleteById": true
+        }
+      }
+    }
   }
 }
