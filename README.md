@@ -11,4 +11,8 @@ Agora, se você modificou as configurações originais, você deve então criar 
 ### Rodando a app
 
 Agora, com o banco ok, você pode rodar a app com o comando `node .`.  
-A cada execução a app configurará o banco (criar/modificar tabelas, sequences e etc) conforme for necessário.
+A cada execução a app configurará o banco (criar/modificar tabelas, sequences e etc) conforme necessário.
+Para facilitar o consumo da API, você pode executar as requests pelo Postman através do botão abaixo.
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/21d1d0cafb2b3934872f)
+
