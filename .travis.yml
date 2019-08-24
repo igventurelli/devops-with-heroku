@@ -9,6 +9,6 @@ jobs:
   include:
     - stage: test
       script: docker-compose build
-      script: docker-compose up
+      script: docker-compose up --exit-code-from newman
     - stage: deploy
       script: echo Deploy phase managed by Heroku
