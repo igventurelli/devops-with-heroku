@@ -1,3 +1,15 @@
 language: node_js
 node_js:
   - 8
+
+services:
+  - docker
+
+jobs:
+  include:
+    - stage: test
+    # dockerfile
+      script: docker pull postman/newman
+      script: docker run -v ~/tests:/etc/newman -t postman/newman:alpine postman-collection.json
+    - stage: deploy
+      script: ./deploy
