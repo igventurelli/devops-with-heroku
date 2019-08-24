@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  postgres:
+    container_name: gypz-db
+    image: postgres:10.3-alpine
+    environment:
+      POSTGRES_USER: gypz
+      POSTGRES_PASSWORD: gypz
+      POSTGRES_DB: gypz
+    volumes:
+       - ~/storage/gypz/postgres:/data/postgres
+    ports:
+      - "5432:5432"
