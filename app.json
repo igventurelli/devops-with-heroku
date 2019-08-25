@@ -6,6 +6,7 @@
 
   ],
   "env": {
+    "NEW_RELIC_LICENSE_KEY": "dummy"
   },
   "formation": {
   },
