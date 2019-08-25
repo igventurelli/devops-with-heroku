@@ -62,5 +62,6 @@ Com essas funcionalidades configuradas, as coisas funcionam da seguinte maneira:
     - O transporte das modificações de Staging para Production é o chamado _Heroku Pipelines_.
     - Um ponto importante aqui é o fato de que, no momento que houve ou build em Staging, gerou-se um artefato de software. Esse artefato foi testado unitáriamente, foi testado a integração entre suas funcionalidades, foi testado integrado a sistemas externos e foi homologado. Não faria sentigo algum que houvesse um novo build para o ambiente produtivo e isso de fato não acontece. O transporte para produção não acarreta em outro build e isso faz o total sentigo. O artefato que você gera, é o artefato que você testa, é o artefato que você homologa e por fim, é o artefato que você entrega.
 
-Para ficar um pouco mais clara a idéia de como funciona o Heroku, segue uma print do _Heroku Pipelines_ desse projeto.
+Para ficar um pouco mais clara a idéia de como funciona o Heroku, aqui tenmos um print do _Heroku Pipelines_ desse projeto:
 
+![](https://gypz.s3-sa-east-1.amazonaws.com/img.png)
