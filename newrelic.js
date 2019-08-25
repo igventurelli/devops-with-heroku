@@ -1,3 +1,4 @@
+/* eslint-disable */
 'use strict'
 /**
  * New Relic agent configuration.
