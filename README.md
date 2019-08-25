@@ -65,3 +65,9 @@ Com essas funcionalidades configuradas, as coisas funcionam da seguinte maneira:
 Para ficar um pouco mais clara a ideia de como funciona o Heroku, aqui tenmos um print do _Heroku Pipelines_ desse projeto:
 
 ![](https://gypz.s3-sa-east-1.amazonaws.com/img.png)
+
+#### Monitoramento
+
+Depois do deploy realizado em produção, precisamos saber da saúde da nossa app no ar, para isso utilizamos o [New Relic](https://newrelic.com/) para nos mostrar o status da nossa app em tempo real:
+
+![](https://gypz.s3-sa-east-1.amazonaws.com/newrelic.png)
