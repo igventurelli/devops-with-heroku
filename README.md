@@ -5,7 +5,7 @@
 ### Configuração do ambiente
 
 Você precisará de um banco de dados Postgres para rodar a app.  
-Para sua comidade, esse repo contém um simples `docker-compose.yml` que levantará um banco configurado para você :)
+Esse repo contém um `docker-compose.yml` que levantará um banco configurado corretamente.
 
 Se você manteve as configurações que estavam no `docker-compose.yml`, basta executar `docker-compose up -d postgres` e você está pronto para rodar a app.  
 Agora, se você modificou as configurações originais, você deve então criar uma variável de ambiente chamada `DATABASE_URL`, onde o valor dessa variável deve ser a _string de conexão_ com o banco no formato `postgres://{usuario}:{senha}@{host}:{porta}/{banco}`. 
