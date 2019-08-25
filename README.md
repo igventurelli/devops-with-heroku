@@ -38,15 +38,15 @@ O processo de build do CI é simples:
 - Executa o processo descrito no arquivo `.travis.yml`, onde:
   - Temos dois estagios: _test_ e _deploy_:
     - **Test**:
-      - Por padrão, a primeira execução do Travis é para rodar os testes unitários e de integração. No caso desse projeto, `npm test`.
-      - Se o passo anterior funcionar, o Travis utilizirá o `docker-compose.yml` e o `Dockerfile` do projeto para executar testes integrados, utilizando o [Newman](https://support.getpostman.com/hc/en-us/articles/115003710329-What-is-Newman-)
+      - Por padrão, a primeira instrução de um build do Travis é para rodar os testes unitários e de integração. No caso desse projeto, `npm test`.
+      - Se o passo anterior funcionar, então rodaremos os testes integrados com o `docker-compose.yml` e o `Dockerfile` do projeto , utilizando o [Newman](https://support.getpostman.com/hc/en-us/articles/115003710329-What-is-Newman-)
       - Se os testes executados pelo Newman funcionarem, o estagio é finalizado e o próximo começa
     - **Deploy**:
       - Esse estágio, como o deploy é feito pelo Heroku, não precisaria existir, mas deixei no CI apenas como referência para o processo
 
 ### Heroku
 
-No Heroku trabalhamos com duas funcionalidades maneiras que ele nos provê, as [Review Apps](https://devcenter.heroku.com/articles/github-integration-review-apps) e o [Heroku Pipelines](https://devcenter.heroku.com/articles/pipelines).
+No Heroku trabalhamos com duas funcionalidades que ele nos provê, as [Review Apps](https://devcenter.heroku.com/articles/github-integration-review-apps) e o [Heroku Pipelines](https://devcenter.heroku.com/articles/pipelines).
 
 Com essas funcionalidades configuradas, as coisas funcionam da seguinte maneira:
 
@@ -60,7 +60,7 @@ Com essas funcionalidades configuradas, as coisas funcionam da seguinte maneira:
   - Nesse fluxo, trabalhamos com _Entrega Contínua_ e não com _Deploy Contínuo_. Isso significa que é necessário que exista um ambiente de homologação (Staging) e alguém (humano) precisa de fato homologar a modificação para que aí sim, seja feito o transporte para a produção.
   - Após finalizadas as validações para homologação a pessoa que homologou precisa apenas clicar no botão _Promote to Production_ e pronto. O código é publicado em produção.
     - O transporte das modificações de Staging para Production é o chamado _Heroku Pipelines_.
-    - Um ponto importante aqui é o fato de que, no momento que houve ou build em Staging, gerou-se um artefato de software. Esse artefato foi testado unitáriamente, foi testado a integração entre suas funcionalidades, foi testado integrado a sistemas externos e foi homologado. Não faria sentigo algum que houvesse um novo build para o ambiente produtivo e isso de fato não acontece. O transporte para produção não acarreta em outro build e isso faz o total sentigo. O artefato que você gera, é o artefato que você testa, é o artefato que você homologa e por fim, é o artefato que você entrega.
+    - Um ponto importante aqui é o fato de que, no momento que houve ou build em Staging, gerou-se um artefato de software. Esse artefato foi testado unitáriamente, foi testado a integração entre suas funcionalidades, foi testado integrado a sistemas externos e foi homologado. Não faria sentido algum se houvesse um novo build para o ambiente produtivo e isso de fato não acontece. O transporte para produção não acarreta em outro build. O artefato que você gera, é o artefato que você testa, é o artefato que você homologa e por fim, é o artefato que você entrega.
 
 Para ficar um pouco mais clara a ideia de como funciona o Heroku, aqui tenmos um print do _Heroku Pipelines_ desse projeto:
 
@@ -71,3 +71,7 @@ Para ficar um pouco mais clara a ideia de como funciona o Heroku, aqui tenmos um
 Depois do deploy realizado em produção, precisamos saber da saúde da nossa app no ar, para isso utilizamos o [New Relic](https://newrelic.com/) para nos mostrar o status da nossa app em tempo real:
 
 ![](https://gypz.s3-sa-east-1.amazonaws.com/newrelic.png)
+
+Além do New Relic, contamos também com o [Sentry](https://sentry.io/welcome/) para rastreamento de erros e exceções:
+
+![](https://gypz.s3-sa-east-1.amazonaws.com/sentry-2.png)
