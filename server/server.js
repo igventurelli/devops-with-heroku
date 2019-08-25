@@ -1,6 +1,8 @@
 'use strict';
 
 require('newrelic');
+var Sentry = require('@sentry/node');
+Sentry.init({ dsn: process.env.SENTRY_DSN });
 
 var loopback = require('loopback');
 var boot = require('loopback-boot');

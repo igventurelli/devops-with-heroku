@@ -6,7 +6,8 @@
 
   ],
   "env": {
-    "NEW_RELIC_LICENSE_KEY": "dummy"
+    "NEW_RELIC_LICENSE_KEY": "dummy",
+    "SENTRY_DSN": ""
   },
   "formation": {
   },
