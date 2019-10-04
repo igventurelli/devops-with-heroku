@@ -1,4 +1,4 @@
-# GYPZ
+# DevOps com Heroku
 
 [![Build Status](https://travis-ci.org/igventurelli/gypz.svg?branch=master)](https://travis-ci.org/igventurelli/gypz)
 
