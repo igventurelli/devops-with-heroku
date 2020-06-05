@@ -1,5 +1,7 @@
 # DevOps com Heroku
 
+## ESSE PROJETO FOI ARQUIVADO E PODE NÃO SER MAIS CONDIZENTE COM A REALIDADE DOS DIAS DE HOJE
+
 [![Build Status](https://travis-ci.org/igventurelli/gypz.svg?branch=master)](https://travis-ci.org/igventurelli/gypz)
 
 ### Configuração do ambiente
